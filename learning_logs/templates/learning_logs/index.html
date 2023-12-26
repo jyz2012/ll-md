@@ -1,0 +1,16 @@
+{% extends "learning_logs/base.html" %}
+
+{% block header %}
+  <div class="jumbotron">
+    <h1 class="display-3">记录你的生活</h1>
+    <h2>在这里记录你的笔记,分享你的知识。</h2>
+    {% if user.is_authenticated %}
+    <a class="btn btn-lg btn-primary" href="{% url 'learning_logs:my_topics' %}"
+    role="button">我的主题 &raquo;</a>
+    {% else %}
+    <a class="btn btn-lg btn-primary" href="{% url 'users:login' %}"
+    role="button">登录 &raquo;</a>
+    {% endif %}
+    <!-- <p><a href="{% url 'learning_logs:index' %}">View all entries &raquo;</a></p> -->
+  </div>
+{% endblock header %}
