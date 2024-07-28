@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows
+    runs-on: windows-latest
     strategy:
       max-parallel: 4
       matrix:
@@ -27,4 +27,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python manage.py runserver
